@@ -1,7 +1,5 @@
 package propets.model.lfconverter;
 
-import java.io.Serializable;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -13,20 +11,11 @@ import lombok.NoArgsConstructor;
 @Getter
 @Builder
 @EqualsAndHashCode
-public class Location implements Serializable{
+public class Coordinates {
 	
-	private static final long serialVersionUID = 1L;
-
-	String country;
-
-	String city;
-
-	String street;
-
-	Integer building;
-
 	Double latitude;
 
 	Double longitude;
+
 
 }

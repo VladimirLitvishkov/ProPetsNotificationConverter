@@ -5,12 +5,10 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Configuration;
 
 import lombok.Getter;
-import lombok.Setter;
 
 @Configuration
 @RefreshScope
 @Getter
-@Setter
 public class ConverterConfiguration {
 	
 	@Value("${keyUsers}")

@@ -9,8 +9,6 @@ import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.cloud.stream.messaging.Processor;
 import org.springframework.messaging.handler.annotation.SendTo;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import propets.configuration.lfconverter.ConverterConfiguration;
 import propets.dao.lfconverter.NotificationRepository;
 import propets.dto.lfconverter.NotificationDTO;
@@ -27,8 +25,6 @@ public class NotificationService {
 
 	@Autowired
 	LostFoundConverterService converterService;
-
-	ObjectMapper mapper = new ObjectMapper();
 
 	@StreamListener(Processor.INPUT)
 	@SendTo(Processor.OUTPUT)

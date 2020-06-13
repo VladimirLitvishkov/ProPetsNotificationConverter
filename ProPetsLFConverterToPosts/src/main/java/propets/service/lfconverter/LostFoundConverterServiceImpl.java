@@ -14,10 +14,10 @@ import propets.model.lfconverter.LostFound;
 
 @Service
 public class LostFoundConverterServiceImpl implements LostFoundConverterService {
-	
+
 	@Autowired
 	LostAndFoundRepository lostFoundRepository;
-	
+
 	@Autowired
 	NotificationRepository notificationRepository;
 
@@ -30,10 +30,10 @@ public class LostFoundConverterServiceImpl implements LostFoundConverterService 
 	}
 
 	private LostFoundDTO buildLostFoundDto(LostFound model) {
-		return LostFoundDTO.builder().id(model.getId()).userLogin(model.getUserLogin())
-				.userName(model.getUserName()).avatar(model.getAvatar()).datePost(model.getDatePost())
-				.type(model.getType()).typePost(model.getTypePost()).tags(model.getTags()).photos(model.getPhotos())
-				.breed(model.getBreed()).sex(model.getSex()).location(model.getLocation()).build();
+		return LostFoundDTO.builder().id(model.getId()).userLogin(model.getUserLogin()).userName(model.getUserName())
+				.avatar(model.getAvatar()).datePost(model.getDatePost()).type(model.getType())
+				.typePost(model.getTypePost()).tags(model.getTags()).photos(model.getPhotos()).breed(model.getBreed())
+				.sex(model.getSex()).address(model.getAddress()).coordinates(model.getCoordinates()).build();
 	}
 
 	@Override
