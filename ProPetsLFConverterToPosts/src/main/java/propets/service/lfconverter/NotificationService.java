@@ -29,6 +29,9 @@ public class NotificationService {
 	@StreamListener(Processor.INPUT)
 	@SendTo(Processor.OUTPUT)
 	public NotificationDTO searchResultNotification(Map<String, Set<String>> info) {
+		if (info == null) {
+			return null;
+		}
 		Notification notification = Notification.builder()
 				.posts(converterService.findPostsByAllId(info.get(configuration.getKeyPosts())))
 				.users(configuration.getKeyUsers()).build();
