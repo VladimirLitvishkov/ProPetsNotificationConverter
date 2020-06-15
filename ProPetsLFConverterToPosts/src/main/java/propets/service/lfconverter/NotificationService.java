@@ -34,7 +34,7 @@ public class NotificationService {
 		}
 		Notification notification = Notification.builder()
 				.posts(converterService.findPostsByAllId(info.get(configuration.getKeyPosts())))
-				.users(configuration.getKeyUsers()).build();
+				.users(info.get(configuration.getKeyUsers())).build();
 		notificationRepository.save(notification);
 		return NotificationDTO.builder().id(notification.getId()).users(notification.getUsers()).build();
 	}
